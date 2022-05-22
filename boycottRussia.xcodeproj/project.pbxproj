@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1BAA262837FB260013DBA2 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1BAA252837FB260013DBA2 /* FetchData.swift */; };
+		9B48A0E52835870C001499B2 /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E42835870C001499B2 /* color.swift */; };
+		9B48A0E728358736001499B2 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E628358736001499B2 /* Main.swift */; };
+		9B48A0E928358778001499B2 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E828358778001499B2 /* MainVM.swift */; };
+		9B5415B528384921002C17CA /* InfoAboutCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5415B428384921002C17CA /* InfoAboutCompanyModel.swift */; };
 		9BA122122822C65800F305A4 /* boycottRussiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA122112822C65800F305A4 /* boycottRussiaApp.swift */; };
 		9BA122142822C65800F305A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA122132822C65800F305A4 /* ContentView.swift */; };
 		9BA122162822C65B00F305A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA122152822C65B00F305A4 /* Assets.xcassets */; };
 		9BA122192822C65B00F305A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA122182822C65B00F305A4 /* Preview Assets.xcassets */; };
+		9BA122252822CEE500F305A4 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA122242822CEE500F305A4 /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B1BAA252837FB260013DBA2 /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		9B48A0E42835870C001499B2 /* color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
+		9B48A0E628358736001499B2 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		9B48A0E828358778001499B2 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
+		9B5415B428384921002C17CA /* InfoAboutCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutCompanyModel.swift; sourceTree = "<group>"; };
 		9BA1220E2822C65800F305A4 /* boycottRussia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boycottRussia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA122112822C65800F305A4 /* boycottRussiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boycottRussiaApp.swift; sourceTree = "<group>"; };
 		9BA122132822C65800F305A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,12 +37,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BA122252822CEE500F305A4 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1BAA232837FAE20013DBA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B1BAA242837FAF30013DBA2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9B1BAA252837FB260013DBA2 /* FetchData.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9B48A0E3283586F7001499B2 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				9B48A0E42835870C001499B2 /* color.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		9BA122052822C65800F305A4 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +87,13 @@
 			isa = PBXGroup;
 			children = (
 				9BA122112822C65800F305A4 /* boycottRussiaApp.swift */,
+				9B48A0E3283586F7001499B2 /* extension */,
+				9B1BAA232837FAE20013DBA2 /* Views */,
 				9BA122132822C65800F305A4 /* ContentView.swift */,
+				9B5415B428384921002C17CA /* InfoAboutCompanyModel.swift */,
+				9B48A0E628358736001499B2 /* Main.swift */,
+				9B48A0E828358778001499B2 /* MainVM.swift */,
+				9B1BAA242837FAF30013DBA2 /* Network */,
 				9BA122152822C65B00F305A4 /* Assets.xcassets */,
 				9BA122172822C65B00F305A4 /* Preview Content */,
 			);
@@ -83,6 +124,9 @@
 			dependencies = (
 			);
 			name = boycottRussia;
+			packageProductDependencies = (
+				9BA122242822CEE500F305A4 /* CodeScanner */,
+			);
 			productName = boycottRussia;
 			productReference = 9BA1220E2822C65800F305A4 /* boycottRussia.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +155,9 @@
 				Base,
 			);
 			mainGroup = 9BA122052822C65800F305A4;
+			packageReferences = (
+				9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 9BA1220F2822C65800F305A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5415B528384921002C17CA /* InfoAboutCompanyModel.swift in Sources */,
+				9B48A0E52835870C001499B2 /* color.swift in Sources */,
+				9B1BAA262837FB260013DBA2 /* FetchData.swift in Sources */,
+				9B48A0E928358778001499B2 /* MainVM.swift in Sources */,
 				9BA122142822C65800F305A4 /* ContentView.swift in Sources */,
+				9B48A0E728358736001499B2 /* Main.swift in Sources */,
 				9BA122122822C65800F305A4 /* boycottRussiaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,11 +321,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"boycottRussia/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = boycottRussia/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera for scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,11 +351,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"boycottRussia/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = boycottRussia/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera for scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9BA122242822CEE500F305A4 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BA122062822C65800F305A4 /* Project object */;
 }
