@@ -10,8 +10,6 @@ import Combine
 
 struct Main: View {
     @StateObject private var viewModel = MainVM()
-    @State var inputText: String = ""
-    @State var infoAboutCompany = ""
     
     
     var body: some View {
@@ -25,23 +23,21 @@ struct Main: View {
                     .foregroundColor(Color.white)
                     .font(Font.system(size: 50))
                 HStack {
-                    TextField("Введіть назву товару", text: $inputText)
+                    TextField("Введіть назву товару", text: $viewModel.searchCompany)
                         .frame(alignment:.center)
 //                        .fixedSize()
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                     Button(action: {
-                        viewModel.searchCompany = inputText
                         viewModel.fetchAPI()
                     }) {
                         Image(systemName: "magnifyingglass")
                         .font(.largeTitle)
                         .foregroundColor(.white)
-                    }
+                    }.disabled(!viewModel.isValid)
                 }
                 Text(viewModel.companyStatus)
                     .foregroundColor(Color.white)
-                    .font(Font.system(size: 40))
                 Spacer()
             }
             .padding(.top, 150.0)
