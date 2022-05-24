@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct Main: View {
-    @StateObject private var viewModel = MainVM()
+    @StateObject private var viewModel = SearchScreenViewModel()
     
     
     var body: some View {
@@ -35,6 +35,18 @@ struct Main: View {
                         .font(.largeTitle)
                         .foregroundColor(.white)
                     }.disabled(!viewModel.isValid)
+                    TextField("Введіть штрихкод", text: $viewModel.searchBarcode)
+                        .frame(alignment:.center)
+//                        .fixedSize()
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    Button(action: {
+                        viewModel.getbarcodeInfo()
+                    }) {
+                        Image(systemName: "magnifyingglass")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                    }
                 }
                 Text(viewModel.companyStatus)
                     .foregroundColor(Color.white)

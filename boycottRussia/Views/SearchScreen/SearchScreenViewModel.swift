@@ -8,9 +8,10 @@
 import Combine
 import Foundation
 
-final class MainVM: ObservableObject {
+final class SearchScreenViewModel: ObservableObject {
     // input
     @Published var searchCompany = ""
+    @Published var searchBarcode = ""
     // output
     @Published var isValid = false
     @Published var companyStatus: String = ""
@@ -35,7 +36,13 @@ final class MainVM: ObservableObject {
             .assign(to: \.isValid, on: self)
             .store(in: &cancellableSet)
     }
-    
+    func getbarcodeInfo() {
+        FirebaseManager.shared.getPost(collection: "companyBarcode", docName: searchBarcode, completion: {doc in
+            guard doc != nil else {return}
+            self.searchCompany = doc?.Name ?? "Nena info"
+            self.fetchAPI()
+        })
+    }
     func fetchAPI() {
         guard let search = self.searchCompany.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else{
             self.companyStatus = "Введіть назву"
@@ -56,33 +63,7 @@ final class MainVM: ObservableObject {
                         if decodeStatus.isEmpty{
                             self.companyStatus="🤔 Цієї компанії чи товару ще немає в нашій базі. Проте ми вже у пошуках 😉"
                         } else{
-                            if decodeStatus[0].status == "clear"{
-                                self.companyStatus = "🟢 \(decodeStatus[0].name ?? "компанія") не веде бізнес на росії 👌"
-                            }
-                            if decodeStatus[0].status == "russian"{
-                                self.companyStatus = "🔴 Це \(decodeStatus[0].name ?? "компанія")  країни-агресора 🤬🤬🤬"
-                            }
-                            if decodeStatus[0].status == "not_out"{
-                                self.companyStatus = " Бойкот! \(decodeStatus[0].name ?? "компанія")  не покинула ринок росії!"
-                            }
-                            if decodeStatus[0].status == "darkness"{
-                                self.companyStatus = "🟢 \(decodeStatus[0].name ?? "компанія") не веде бізнес на росії 👌"
-                            }
-                            if decodeStatus[0].status == "ukrainian"{
-                                self.companyStatus = "\(decodeStatus[0].name ?? "компанія") 🇺🇦 Це наше, українське!"
-                            }
-                            if decodeStatus[0].status == "partially_out"{
-                                self.companyStatus = "🟠 \(decodeStatus[0].name ?? "компанія") заявила, що призупиняє або скорочує свою діяльність на росії 🤔"
-                            }
-                            if decodeStatus[0].status == "out_of_ukraine"{
-                                self.companyStatus = "\(decodeStatus[0].name ?? "компанія") не веде бізнес в Україні"
-                            }
-                            if decodeStatus[0].status == "publicly_silence"{
-                                self.companyStatus = "\(decodeStatus[0].name ?? "компанія") замовчує"
-                            }
-                            if decodeStatus[0].status == "russian_collaborator"{
-                                self.companyStatus = " \(decodeStatus[0].name ?? "компанія") є колаборантом"
-                            }
+                            self.companyStatus = self.getStatus(decodeStatus: decodeStatus)
                         }
                     }
                 }
@@ -110,5 +91,36 @@ final class MainVM: ObservableObject {
 //            .catch { _ in Just(CompanyInfo())}
 //            .receive(on: RunLoop.main)
 //            .eraseToAnyPublisher()
+    }
+    
+    func getStatus (decodeStatus: CompanyInfo) -> String {
+        if decodeStatus[0].status == "clear"{
+            return "🟢 \(decodeStatus[0].name ?? "компанія") не веде бізнес на росії 👌"
+        }
+        if decodeStatus[0].status == "russian"{
+            return "🔴 \(decodeStatus[0].name ?? "компанія") - компанія країни-агресора 🤬🤬🤬"
+        }
+        if decodeStatus[0].status == "not_out"{
+            return " Бойкот! \(decodeStatus[0].name ?? "компанія")  не покинула ринок росії!"
+        }
+        if decodeStatus[0].status == "darkness"{
+            return "🟢 \(decodeStatus[0].name ?? "компанія") не веде бізнес на росії 👌"
+        }
+        if decodeStatus[0].status == "ukrainian"{
+            return "\(decodeStatus[0].name ?? "компанія") 🇺🇦 Це наше, українське!"
+        }
+        if decodeStatus[0].status == "partially_out"{
+            return "🟠 \(decodeStatus[0].name ?? "компанія") заявила, що призупиняє або скорочує свою діяльність на росії 🤔"
+        }
+        if decodeStatus[0].status == "out_of_ukraine"{
+            return "\(decodeStatus[0].name ?? "компанія") не веде бізнес в Україні"
+        }
+        if decodeStatus[0].status == "publicly_silence"{
+            return "\(decodeStatus[0].name ?? "компанія") замовчує"
+        }
+        if decodeStatus[0].status == "russian_collaborator"{
+            return " \(decodeStatus[0].name ?? "компанія") є колаборантом"
+        }
+        return ""
     }
 }
