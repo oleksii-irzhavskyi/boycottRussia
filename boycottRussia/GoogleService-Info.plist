@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>757783642522-3okkel9lf9pv69ueli1l3m76h3eejvhn.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.757783642522-3okkel9lf9pv69ueli1l3m76h3eejvhn</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCSdX82546udIPS3_sSOlz_zEhqb9iDhx4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>757783642522</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>oi.boycottRussia</string>
+	<key>PROJECT_ID</key>
+	<string>boycott-russia</string>
+	<key>STORAGE_BUCKET</key>
+	<string>boycott-russia.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:757783642522:ios:3b522ee7674dc73ebf3a23</string>
+</dict>
+</plist>
