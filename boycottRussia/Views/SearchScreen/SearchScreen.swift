@@ -7,9 +7,11 @@
 
 import SwiftUI
 import Combine
+import CodeScanner
 
 struct Main: View {
     @StateObject private var viewModel = SearchScreenViewModel()
+    @State private var isPresentingScanner = false
     
     
     var body: some View {
@@ -22,6 +24,7 @@ struct Main: View {
                 Text("boycottRussia")
                     .foregroundColor(Color.white)
                     .font(Font.system(size: 50))
+                .frame(alignment: .topLeading)
                 HStack {
                     TextField("Введіть назву товару", text: $viewModel.searchCompany)
                         .frame(alignment:.center)
@@ -35,17 +38,19 @@ struct Main: View {
                         .font(.largeTitle)
                         .foregroundColor(.white)
                     }.disabled(!viewModel.isValid)
-                    TextField("Введіть штрихкод", text: $viewModel.searchBarcode)
-                        .frame(alignment:.center)
-//                        .fixedSize()
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
                     Button(action: {
-                        viewModel.getbarcodeInfo()
-                    }) {
-                        Image(systemName: "magnifyingglass")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
+                        self.isPresentingScanner.toggle()
+                    }){
+                        Image(systemName: "barcode")
+                    }
+                    .sheet(isPresented: $isPresentingScanner) {
+                        CodeScannerView(codeTypes: [.qr]) { response in
+                            if case let .success(result) = response {
+                                viewModel.searchBarcode = result.string
+                                viewModel.getbarcodeInfo()
+                                isPresentingScanner = false
+                            }
+                        }
                     }
                 }
                 Text(viewModel.companyStatus)
@@ -53,8 +58,7 @@ struct Main: View {
                 Spacer()
             }
             .padding(.top, 150.0)
-            
-            }
+        }
 //            .onAppear {
 //                viewModel.fetchAPI()
 //            }

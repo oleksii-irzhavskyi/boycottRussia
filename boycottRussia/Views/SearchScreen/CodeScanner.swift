@@ -8,7 +8,8 @@
 import SwiftUI
 import CodeScanner
 
-struct ContentView: View {
+struct CodeScanner: View {
+//    @StateObject
     @State var isPresentingScanner = false
     @State var scannedCode: String = "Scan a QR or barcode to get started."
 
@@ -23,10 +24,11 @@ struct ContentView: View {
                                     .interleaved2of5,
                                     .itf14,
                                     .pdf417,
-                                    .upce], simulatedData: "I am rusofob") { response in
+                                    .upce], scanMode: .once, simulatedData: "I am rusofob") { response in
             switch response {
             case .success(let result):
                 print("Found code: \(result.string)")
+
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -54,9 +56,9 @@ struct ContentView: View {
         }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CodeScanner_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CodeScanner()
     }
 }
 }
