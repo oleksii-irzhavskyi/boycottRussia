@@ -12,12 +12,12 @@ struct MainView: View {
         TabView {
             Main()
                 .tabItem {
-                    Image(systemName: "house")
+                    Image(systemName: "magnifyingglass")
                     Text("Пошук")
                 }
             CompanyListScreen()
                 .tabItem {
-                    Image(systemName: "person")
+                    Image(systemName: "list.bullet")
                     Text("Список")
                 }
         }

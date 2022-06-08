@@ -11,9 +11,6 @@ struct CompanyInfoElement: Codable {
     let id: Int?
     let name, status, updatedAt: String?
     let products: [Product]?
-//    static var placeholder: Self{
-//        return InfoAboutCompanyElement(id: nil, name: nil, status: nil, updatedAt: nil, products: nil)
-//    }
 }
 
 // MARK: - Product

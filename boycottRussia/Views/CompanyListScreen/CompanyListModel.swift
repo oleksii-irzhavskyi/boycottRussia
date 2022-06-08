@@ -31,7 +31,7 @@ struct Fields: Codable {
     let country, action, dateOfLastAction: String?
     let linkToAnnouncement: String?
     let gicsIndustrySector, magnitudeOfRussianOperations: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case name = "Name"
         case logo = "Logo"

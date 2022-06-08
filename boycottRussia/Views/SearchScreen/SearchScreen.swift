@@ -15,53 +15,53 @@ struct Main: View {
     
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: Gradient(colors: [.topColor,.centerColor]),
-                           startPoint: .topLeading,
-                           endPoint: .bottom)
+        NavigationView{
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [.topColor,.centerColor]),
+                               startPoint: .topLeading,
+                               endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .center, spacing: 140){
-                Text("boycottRussia")
-                    .foregroundColor(Color.white)
-                    .font(Font.system(size: 50))
-                .frame(alignment: .topLeading)
-                HStack {
-                    TextField("Введіть назву товару", text: $viewModel.searchCompany)
-                        .frame(alignment:.center)
-//                        .fixedSize()
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                    Button(action: {
-                        viewModel.fetchAPI()
-                    }) {
-                        Image(systemName: "magnifyingglass")
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                    }.disabled(!viewModel.isValid)
-                    Button(action: {
-                        self.isPresentingScanner.toggle()
-                    }){
-                        Image(systemName: "barcode")
+                VStack(alignment: .center, spacing: 140){
+                    Text("boycottRussia")
+                        .foregroundColor(Color.white)
+                        .font(Font.system(size: 50))
+                        .frame(alignment: .topLeading)
+                    HStack {
+                        TextField("Введіть назву товару", text: $viewModel.searchCompany)
+                            .frame(alignment:.center)
+                            .background(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                        Button(action: {
+                            viewModel.fetchAPI()
+                        }) {
+                            Image(systemName: "magnifyingglass")
+                                .font(.largeTitle)
+                                .foregroundColor(.white)
+                        }.disabled(!viewModel.isValid)
                     }
-                    .sheet(isPresented: $isPresentingScanner) {
-                        CodeScannerView(codeTypes: [.qr]) { response in
-                            if case let .success(result) = response {
-                                viewModel.searchBarcode = result.string
-                                viewModel.getbarcodeInfo()
-                                isPresentingScanner = false
-                            }
+                    Text(viewModel.companyStatus)
+                        .foregroundColor(Color.white)
+                    Spacer()
+                }
+                .padding(.top, 150.0)
+            }
+            .navigationBarItems(trailing: Button(action: {
+                self.isPresentingScanner.toggle()
+            }){
+                Image(systemName: "barcode.viewfinder")
+            }
+                .sheet(isPresented: $isPresentingScanner) {
+                    CodeScannerView(codeTypes: [.qr]) { response in
+                        if case let .success(result) = response {
+                            viewModel.searchBarcode = result.string
+                            viewModel.getbarcodeInfo()
+                            isPresentingScanner = false
                         }
                     }
-                }
-                Text(viewModel.companyStatus)
-                    .foregroundColor(Color.white)
-                Spacer()
-            }
-            .padding(.top, 150.0)
+                })
         }
-//            .onAppear {
-//                viewModel.fetchAPI()
-//            }
+        
+        
     }
 }
 

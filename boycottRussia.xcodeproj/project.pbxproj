@@ -11,7 +11,6 @@
 		9B24BCF9283C09C30038B666 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCF8283C09C30038B666 /* FirebaseDatabase */; };
 		9B24BCFB283C09C30038B666 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCFA283C09C30038B666 /* FirebaseFirestore */; };
 		9B24BCFD283C09C30038B666 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCFC283C09C30038B666 /* FirebaseStorage */; };
-		9B3DB6AA284FD2D8009F248D /* CodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB6A9284FD2D8009F248D /* CodeScanner.swift */; };
 		9B3DB6AC284FD322009F248D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB6AB284FD322009F248D /* MainView.swift */; };
 		9B48A0E52835870C001499B2 /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E42835870C001499B2 /* color.swift */; };
 		9B48A0E728358736001499B2 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E628358736001499B2 /* SearchScreen.swift */; };
@@ -30,7 +29,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B3DB6A9284FD2D8009F248D /* CodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeScanner.swift; sourceTree = "<group>"; };
 		9B3DB6AB284FD322009F248D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9B48A0E42835870C001499B2 /* color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 		9B48A0E628358736001499B2 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				9BE28AB5283D37F900CE22FB /* BarcodeModel.swift */,
 				9B48A0E628358736001499B2 /* SearchScreen.swift */,
 				9B5415B428384921002C17CA /* InfoAboutCompanyModel.swift */,
-				9B3DB6A9284FD2D8009F248D /* CodeScanner.swift */,
 			);
 			path = SearchScreen;
 			sourceTree = "<group>";
@@ -232,7 +229,6 @@
 				9BF3E0F7284BEF2A00D64583 /* CompanyListScreen.swift in Sources */,
 				9B8CD864284BD64100B79FFD /* CompanyListModel.swift in Sources */,
 				9BE28AB4283D371100CE22FB /* FirebaseManager.swift in Sources */,
-				9B3DB6AA284FD2D8009F248D /* CodeScanner.swift in Sources */,
 				9B48A0E728358736001499B2 /* SearchScreen.swift in Sources */,
 				9B3DB6AC284FD322009F248D /* MainView.swift in Sources */,
 				9BA122122822C65800F305A4 /* boycottRussiaApp.swift in Sources */,

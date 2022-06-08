@@ -18,15 +18,6 @@ final class SearchScreenViewModel: ObservableObject {
     private var cancellableSet: Set<AnyCancellable> = []
     
     init() {
-//        self.$searchCompany
-//            .debounce(for: 0.3, scheduler: RunLoop.main)
-//            .removeDuplicates()
-//            .flatMap { (plate: String?) -> AnyPublisher < CompanyInfo, Never> in
-//                fetchAPI(for: plate)
-//              }
-//            .print("aaaaaaaa")
-//            .assign(to: \.companyStatus, on: self)
-//            .store(in: &self.cancellableSet)
         $searchCompany
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
@@ -39,14 +30,13 @@ final class SearchScreenViewModel: ObservableObject {
     func getbarcodeInfo() {
         FirebaseManager.shared.getPost(collection: "companyBarcode", docName: searchBarcode, completion: {doc in
             guard doc != nil else {return}
-            self.searchCompany = doc?.Name ?? "Nena info"
+            self.searchCompany = doc?.Name ?? "Немає інформації"
             self.fetchAPI()
         })
     }
     func fetchAPI() {
         guard let search = self.searchCompany.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else{
             self.companyStatus = "Введіть назву"
-            print("ls,ls,sl")
             return
         }
         guard let url = URL(string: "https://api.boycottrussiabot.com/v1/companies/search?name=\(search)") else {
@@ -68,29 +58,7 @@ final class SearchScreenViewModel: ObservableObject {
                     }
                 }
             }
-//            if let error = error {
-//                    print("Error took place \(error)")
-//                    return
-//                }
-//
-//                // Read HTTP Response Status code
-//                if let response = response as? HTTPURLResponse {
-//                    print("Response HTTP Status code: \(response.statusCode)")
-//                }
-//
-//                // Convert HTTP Response Data to a simple String
-//                if let data = data, let dataString = String(data: data, encoding: .utf8) {
-//                    print("Response data string:\n \(dataString)")
-//                }
         }.resume()
-//       return
-//        URLSession.shared.dataTaskPublisher(for: request)
-//            .map { $0.data }
-//            .print("aaadatatask")
-//            .decode(type: CompanyInfo.self, decoder: JSONDecoder())
-//            .catch { _ in Just(CompanyInfo())}
-//            .receive(on: RunLoop.main)
-//            .eraseToAnyPublisher()
     }
     
     func getStatus (decodeStatus: CompanyInfo) -> String {
