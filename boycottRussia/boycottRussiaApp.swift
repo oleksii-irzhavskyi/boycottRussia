@@ -10,7 +10,7 @@ import FirebaseCore
 import Firebase
 
 @main
-struct boycottRussiaApp: App {
+struct BoycottRussiaApp: App {
     init() {
             FirebaseApp.configure()
         }

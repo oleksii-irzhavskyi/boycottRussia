@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BarcodeModel{
-    let Barcode: String
-    let Name: String
+struct BarcodeModel {
+    let barcode: String
+    let name: String
 }

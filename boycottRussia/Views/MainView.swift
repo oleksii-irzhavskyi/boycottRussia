@@ -10,15 +10,17 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            Main()
+            Home()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Пошук")
+                        .foregroundColor(Color.blue)
                 }
             CompanyListScreen()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Список")
+                        .foregroundColor(Color.black)
                 }
         }
     }

@@ -10,8 +10,8 @@ import Foundation
 struct CompanyList: Codable {
     let records: [Record]
     let offset: String?
-    
-    enum CodingKeys: String, CodingKey{
+
+    enum CodingKeys: String, CodingKey {
         case records = "records"
         case offset = "offset"
     }
@@ -31,7 +31,7 @@ struct Fields: Codable {
     let country, action, dateOfLastAction: String?
     let linkToAnnouncement: String?
     let gicsIndustrySector, magnitudeOfRussianOperations: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case name = "Name"
         case logo = "Logo"
@@ -70,5 +70,6 @@ struct Bookmark: Identifiable {
     let id = UUID()
     let name: String
     let icon: String?
+    var country: String?
     var items: [Bookmark]?
 }
