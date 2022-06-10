@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import Firebase
 
 @main
-struct boycottRussiaApp: App {
+struct BoycottRussiaApp: App {
+    init() {
+            FirebaseApp.configure()
+        }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

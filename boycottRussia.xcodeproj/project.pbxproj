@@ -7,18 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B24BCF7283C09C30038B666 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCF6283C09C30038B666 /* FirebaseAnalytics */; };
+		9B24BCF9283C09C30038B666 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCF8283C09C30038B666 /* FirebaseDatabase */; };
+		9B24BCFB283C09C30038B666 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCFA283C09C30038B666 /* FirebaseFirestore */; };
+		9B24BCFD283C09C30038B666 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCFC283C09C30038B666 /* FirebaseStorage */; };
+		9B3DB6AC284FD322009F248D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB6AB284FD322009F248D /* MainView.swift */; };
+		9B48A0E52835870C001499B2 /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E42835870C001499B2 /* color.swift */; };
+		9B48A0E728358736001499B2 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E628358736001499B2 /* SearchScreen.swift */; };
+		9B48A0E928358778001499B2 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E828358778001499B2 /* SearchScreenViewModel.swift */; };
+		9B5415B528384921002C17CA /* InfoAboutCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5415B428384921002C17CA /* InfoAboutCompanyModel.swift */; };
+		9B8CD864284BD64100B79FFD /* CompanyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8CD863284BD64100B79FFD /* CompanyListModel.swift */; };
 		9BA122122822C65800F305A4 /* boycottRussiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA122112822C65800F305A4 /* boycottRussiaApp.swift */; };
-		9BA122142822C65800F305A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA122132822C65800F305A4 /* ContentView.swift */; };
 		9BA122162822C65B00F305A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA122152822C65B00F305A4 /* Assets.xcassets */; };
 		9BA122192822C65B00F305A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA122182822C65B00F305A4 /* Preview Assets.xcassets */; };
+		9BA122252822CEE500F305A4 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 9BA122242822CEE500F305A4 /* CodeScanner */; };
+		9BE28AB4283D371100CE22FB /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE28AB3283D371100CE22FB /* FirebaseManager.swift */; };
+		9BE28AB6283D37F900CE22FB /* BarcodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE28AB5283D37F900CE22FB /* BarcodeModel.swift */; };
+		9BE28AB9283D5B6900CE22FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BE28AB8283D5B6900CE22FB /* GoogleService-Info.plist */; };
+		9BF3E0F3284BEC2300D64583 /* CompanyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3E0F2284BEC2300D64583 /* CompanyListViewModel.swift */; };
+		9BF3E0F7284BEF2A00D64583 /* CompanyListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3E0F6284BEF2A00D64583 /* CompanyListScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B3DB6AB284FD322009F248D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9B48A0E42835870C001499B2 /* color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
+		9B48A0E628358736001499B2 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
+		9B48A0E828358778001499B2 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
+		9B5415B428384921002C17CA /* InfoAboutCompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAboutCompanyModel.swift; sourceTree = "<group>"; };
+		9B8CD863284BD64100B79FFD /* CompanyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListModel.swift; sourceTree = "<group>"; };
 		9BA1220E2822C65800F305A4 /* boycottRussia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boycottRussia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA122112822C65800F305A4 /* boycottRussiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boycottRussiaApp.swift; sourceTree = "<group>"; };
-		9BA122132822C65800F305A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BA122152822C65B00F305A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BA122182822C65B00F305A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BE28AB3283D371100CE22FB /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		9BE28AB5283D37F900CE22FB /* BarcodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeModel.swift; sourceTree = "<group>"; };
+		9BE28AB8283D5B6900CE22FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9BF3E0F2284BEC2300D64583 /* CompanyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListViewModel.swift; sourceTree = "<group>"; };
+		9BF3E0F6284BEF2A00D64583 /* CompanyListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyListScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +51,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B24BCF9283C09C30038B666 /* FirebaseDatabase in Frameworks */,
+				9B24BCFB283C09C30038B666 /* FirebaseFirestore in Frameworks */,
+				9B24BCF7283C09C30038B666 /* FirebaseAnalytics in Frameworks */,
+				9B24BCFD283C09C30038B666 /* FirebaseStorage in Frameworks */,
+				9BA122252822CEE500F305A4 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1BAA232837FAE20013DBA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B8CD862284BD60D00B79FFD /* CompanyListScreen */,
+				9BE28AB7283D433100CE22FB /* SearchScreen */,
+				9B3DB6AB284FD322009F248D /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B48A0E3283586F7001499B2 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				9B48A0E42835870C001499B2 /* color.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		9B8CD862284BD60D00B79FFD /* CompanyListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9B8CD863284BD64100B79FFD /* CompanyListModel.swift */,
+				9BF3E0F2284BEC2300D64583 /* CompanyListViewModel.swift */,
+				9BF3E0F6284BEF2A00D64583 /* CompanyListScreen.swift */,
+			);
+			path = CompanyListScreen;
+			sourceTree = "<group>";
+		};
 		9BA122052822C65800F305A4 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +109,11 @@
 		9BA122102822C65800F305A4 /* boycottRussia */ = {
 			isa = PBXGroup;
 			children = (
+				9BE28AB8283D5B6900CE22FB /* GoogleService-Info.plist */,
+				9BE28AB3283D371100CE22FB /* FirebaseManager.swift */,
 				9BA122112822C65800F305A4 /* boycottRussiaApp.swift */,
-				9BA122132822C65800F305A4 /* ContentView.swift */,
+				9B48A0E3283586F7001499B2 /* extension */,
+				9B1BAA232837FAE20013DBA2 /* Views */,
 				9BA122152822C65B00F305A4 /* Assets.xcassets */,
 				9BA122172822C65B00F305A4 /* Preview Content */,
 			);
@@ -67,6 +128,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9BE28AB7283D433100CE22FB /* SearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9B48A0E828358778001499B2 /* SearchScreenViewModel.swift */,
+				9BE28AB5283D37F900CE22FB /* BarcodeModel.swift */,
+				9B48A0E628358736001499B2 /* SearchScreen.swift */,
+				9B5415B428384921002C17CA /* InfoAboutCompanyModel.swift */,
+			);
+			path = SearchScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +149,20 @@
 				9BA1220A2822C65800F305A4 /* Sources */,
 				9BA1220B2822C65800F305A4 /* Frameworks */,
 				9BA1220C2822C65800F305A4 /* Resources */,
+				9B986F8628515C1000F735B4 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = boycottRussia;
+			packageProductDependencies = (
+				9BA122242822CEE500F305A4 /* CodeScanner */,
+				9B24BCF6283C09C30038B666 /* FirebaseAnalytics */,
+				9B24BCF8283C09C30038B666 /* FirebaseDatabase */,
+				9B24BCFA283C09C30038B666 /* FirebaseFirestore */,
+				9B24BCFC283C09C30038B666 /* FirebaseStorage */,
+			);
 			productName = boycottRussia;
 			productReference = 9BA1220E2822C65800F305A4 /* boycottRussia.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +191,10 @@
 				Base,
 			);
 			mainGroup = 9BA122052822C65800F305A4;
+			packageReferences = (
+				9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9BA1220F2822C65800F305A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,17 +211,47 @@
 			files = (
 				9BA122192822C65B00F305A4 /* Preview Assets.xcassets in Resources */,
 				9BA122162822C65B00F305A4 /* Assets.xcassets in Resources */,
+				9BE28AB9283D5B6900CE22FB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B986F8628515C1000F735B4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9BA1220A2822C65800F305A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BA122142822C65800F305A4 /* ContentView.swift in Sources */,
+				9B5415B528384921002C17CA /* InfoAboutCompanyModel.swift in Sources */,
+				9B48A0E52835870C001499B2 /* color.swift in Sources */,
+				9BF3E0F3284BEC2300D64583 /* CompanyListViewModel.swift in Sources */,
+				9BE28AB6283D37F900CE22FB /* BarcodeModel.swift in Sources */,
+				9B48A0E928358778001499B2 /* SearchScreenViewModel.swift in Sources */,
+				9BF3E0F7284BEF2A00D64583 /* CompanyListScreen.swift in Sources */,
+				9B8CD864284BD64100B79FFD /* CompanyListModel.swift in Sources */,
+				9BE28AB4283D371100CE22FB /* FirebaseManager.swift in Sources */,
+				9B48A0E728358736001499B2 /* SearchScreen.swift in Sources */,
+				9B3DB6AC284FD322009F248D /* MainView.swift in Sources */,
 				9BA122122822C65800F305A4 /* boycottRussiaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -267,13 +381,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"boycottRussia/Preview Content\"";
+				DEVELOPMENT_TEAM = 5V6877CWKR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = boycottRussia/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera for scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,13 +412,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"boycottRussia/Preview Content\"";
+				DEVELOPMENT_TEAM = 5V6877CWKR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = boycottRussia/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera for scan barcode";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +457,53 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B24BCF6283C09C30038B666 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9B24BCF8283C09C30038B666 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		9B24BCFA283C09C30038B666 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		9B24BCFC283C09C30038B666 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		9BA122242822CEE500F305A4 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BA122062822C65800F305A4 /* Project object */;
 }
