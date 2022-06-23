@@ -28,7 +28,7 @@ class FirebaseManager {
         let database = configuratorFB()
         database.collection(collection).document(docName).getDocument(completion: { (document, error) in
             guard error == nil else {completion(nil); return}
-            let doc = BarcodeModel(barcode: document?.get("Barcode") as! String, name: document?.get("Name") as! String)
+            let doc = BarcodeModel(barcode: document?.get("Barcode") as? String, name: document?.get("Name") as? String)
             completion(doc)
         })
     }

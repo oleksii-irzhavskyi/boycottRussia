@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B068B372853F3DD005444D7 /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B068B362853F3DD005444D7 /* textField.swift */; };
+		9B0EB0922863BFEF00CA876A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0EB0912863BFEF00CA876A /* CustomTabBar.swift */; };
+		9B0EB0942863C00500CA876A /* TabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0EB0932863C00500CA876A /* TabViewModel.swift */; };
 		9B24BCF7283C09C30038B666 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCF6283C09C30038B666 /* FirebaseAnalytics */; };
 		9B24BCF9283C09C30038B666 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCF8283C09C30038B666 /* FirebaseDatabase */; };
 		9B24BCFB283C09C30038B666 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCFA283C09C30038B666 /* FirebaseFirestore */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B068B362853F3DD005444D7 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
+		9B0EB0912863BFEF00CA876A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		9B0EB0932863C00500CA876A /* TabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
 		9B3DB6AB284FD322009F248D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9B48A0E42835870C001499B2 /* color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 		9B48A0E628358736001499B2 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; };
@@ -62,9 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B0EB0902863BFD500CA876A /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9B0EB0912863BFEF00CA876A /* CustomTabBar.swift */,
+				9B0EB0932863C00500CA876A /* TabViewModel.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
 		9B1BAA232837FAE20013DBA2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B0EB0902863BFD500CA876A /* CustomTabBar */,
 				9B8CD862284BD60D00B79FFD /* CompanyListScreen */,
 				9BE28AB7283D433100CE22FB /* SearchScreen */,
 				9B3DB6AB284FD322009F248D /* MainView.swift */,
@@ -76,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				9B48A0E42835870C001499B2 /* color.swift */,
+				9B068B362853F3DD005444D7 /* textField.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -245,6 +262,8 @@
 				9B5415B528384921002C17CA /* InfoAboutCompanyModel.swift in Sources */,
 				9B48A0E52835870C001499B2 /* color.swift in Sources */,
 				9BF3E0F3284BEC2300D64583 /* CompanyListViewModel.swift in Sources */,
+				9B0EB0922863BFEF00CA876A /* CustomTabBar.swift in Sources */,
+				9B068B372853F3DD005444D7 /* textField.swift in Sources */,
 				9BE28AB6283D37F900CE22FB /* BarcodeModel.swift in Sources */,
 				9B48A0E928358778001499B2 /* SearchScreenViewModel.swift in Sources */,
 				9BF3E0F7284BEF2A00D64583 /* CompanyListScreen.swift in Sources */,
@@ -252,6 +271,7 @@
 				9BE28AB4283D371100CE22FB /* FirebaseManager.swift in Sources */,
 				9B48A0E728358736001499B2 /* SearchScreen.swift in Sources */,
 				9B3DB6AC284FD322009F248D /* MainView.swift in Sources */,
+				9B0EB0942863C00500CA876A /* TabViewModel.swift in Sources */,
 				9BA122122822C65800F305A4 /* boycottRussiaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = oi.boycottRussia;
+				PRODUCT_BUNDLE_IDENTIFIER = oi.boycottrussia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -427,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = oi.boycottRussia;
+				PRODUCT_BUNDLE_IDENTIFIER = oi.boycottrussia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

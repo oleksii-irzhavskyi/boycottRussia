@@ -56,7 +56,7 @@ struct Home: View {
                     
                 }
                 
-                VStack{
+                VStack(alignment: .customCenter){
                     Text("Boycott r*ssia")
                         .font(.system(size: 40, weight: .bold))
                     
@@ -107,19 +107,21 @@ struct Home: View {
                         }
                     }
                     .frame(width: width/1.2, height: 270)
+//                    .frame(width: width/1.2, height: height*0.32)
                     
-                    Spacer(minLength: 20)
+//                    Spacer(minLength: 20)
                     
-                    Text("Не підтримуй окупанта")
-                        .padding(.top)
-                    TextField("Введіть назву товару", text: $viewModel.searchCompany)
-                        .foregroundColor(Color.black)
-                        .padding(.trailing)
-                        .frame(alignment: .center)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
-                        .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+//                    Text("t.me/BoycottRussiaBot")
+                    HStack{
+                        Text(Image("tg"))
+                        Link("t.me/BoycottRussiaBot", destination: URL(string: "https://t.me/BoycottRussiaBot")!)
+                    }
+                    NeumorphicStyleTextField(textField: TextField("Пошук...", text: $viewModel.searchCompany))
+                        .frame(width: width/1.2)
+                        .onSubmit {
+                            viewModel.fetchAPI()
+                        }
+                        .submitLabel(.done)
                     HStack {
                         Button {
                             viewModel.fetchAPI()
@@ -129,18 +131,23 @@ struct Home: View {
                                 .padding(.vertical ,22)
                                 .frame(maxWidth: .infinity)
                                 .background(
-                                    
+
                                     .linearGradient(.init(colors: [
-                                        
+
                                         Color.blue,
                                         Color.yellow
                                     ]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                                    
+
                                     ,in: RoundedRectangle(cornerRadius: 20)
                                 )
                         }
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 20)
+                        .alignmentGuide(.customCenter) {
+                          $0[HorizontalAlignment.center]
+                        }
+//                        .padding(.horizontal, 30)
+//                        .padding(.trailing, -30)
+                        .padding(.leading, 30)
+                        .padding(.vertical, 30)
                         .disabled(!viewModel.isValid)
                         Button {
                             self.isPresentingScanner.toggle()
@@ -150,7 +157,9 @@ struct Home: View {
                                 .frame(width: 30, height: 30)
                         }
                         .sheet(isPresented: $isPresentingScanner) {
-                            CodeScannerView(codeTypes: [.qr]) { response in
+                            CodeScannerView(codeTypes: [.ean13,
+                                                        .ean8,
+                                                        .code128]) { response in
                                 if case let .success(result) = response {
                                     viewModel.searchBarcode = result.string
                                     viewModel.getbarcodeInfo()
@@ -159,6 +168,22 @@ struct Home: View {
                             }
                         }
                     }
+                    .frame(width: width/1.2)
+                    Spacer(minLength: 150)
+//                    HStack(spacing: 16) {
+//                            Text("swxwsxwsxwsxsw")
+//                              .font(Font.system(.body, design: .monospaced))
+//                              .alignmentGuide(.customCenter) {
+//                                $0[HorizontalAlignment.center]
+//                              }
+//                            Button(role: .destructive) {
+//
+//                            } label: {
+//                              Image(systemName: "gobackward")
+//                                .imageScale(.large)
+//                            }
+//                            .buttonStyle(.borderedProminent)
+//                          }
                 }
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
@@ -166,4 +191,13 @@ struct Home: View {
             }
         }
     }
+}
+
+struct CustomCenter: AlignmentID {
+  static func defaultValue(in context: ViewDimensions) -> CGFloat {
+    context[HorizontalAlignment.center]
+  }
+}
+extension HorizontalAlignment {
+  static let customCenter: HorizontalAlignment = .init(CustomCenter.self)
 }

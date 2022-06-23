@@ -29,11 +29,18 @@ final class SearchScreenViewModel: ObservableObject {
             .store(in: &cancellableSet)
     }
     func getbarcodeInfo() {
+        if searchBarcode.isNumeric{
         FirebaseManager.shared.getPost(collection: "companyBarcode", docName: searchBarcode, completion: {doc in
             guard doc != nil else {return}
             self.searchCompany = doc?.name ?? "Немає інформації"
             self.fetchAPI()
+            if self.searchCompany == "Немає інформації"{
+                self.searchCompany = ""
+            }
         })
+        }else{
+            self.companyStatus = "Отриманий штрих-код містить помилку."
+        }
     }
     func fetchAPI() {
         guard let search = self.searchCompany.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
@@ -101,4 +108,10 @@ final class SearchScreenViewModel: ObservableObject {
         }
         return ""
     }
+}
+
+extension String {
+   var isNumeric: Bool {
+     return !(self.isEmpty) && self.allSatisfy { $0.isNumber }
+   }
 }
