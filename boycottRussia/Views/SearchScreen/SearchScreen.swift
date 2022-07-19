@@ -12,10 +12,12 @@ import CodeScanner
 struct Home: View {
     @StateObject private var viewModel = SearchScreenViewModel()
     @State private var isPresentingScanner = false
+    @State var submit = false
     
     var body: some View{
         let width = UIScreen.main.bounds.width
-        NavigationView {
+        let height = UIScreen.main.bounds.height
+        NavigationView{
             ZStack{
                 LinearGradient(colors: [Color.blue,Color.yellow
                                        ], startPoint: .top, endPoint: .bottom)
@@ -104,6 +106,37 @@ struct Home: View {
                                 .foregroundColor(Color.white)
                                 .frame(width: width/1.5)
                             Spacer(minLength: 10)
+                            if viewModel.ratingHide{
+                                HStack{
+                                    Button(action: {
+                                        print("like")
+                                        viewModel.addReaction(reaction: "plus")
+                                        submit = true
+                                        
+                                    }){
+                                        Image(systemName: "hand.thumbsup.fill")
+                                            .foregroundColor(Color.green)
+                                            .font(.system(size: 30))
+                                            
+                                    }.alert("Дякуємо за ваш голос", isPresented: $submit){
+                                        Button("Закрити", role: .cancel){viewModel.ratingHide = false}
+                                    }
+                                    Button {
+                                        print("disslike")
+                                        viewModel.addReaction(reaction: "minus")
+                                        submit = true
+                                    } label: {
+                                        Image(systemName: "hand.thumbsdown.fill")
+                                            .foregroundColor(Color.red)
+                                            .font(.system(size: 30))
+                                            
+                                        }.alert("Дякуємо за ваш голос", isPresented: $submit){
+                                            Button("Закрити", role: .cancel){viewModel.ratingHide = false}
+                                    }
+                                }
+                                Spacer()
+                            }
+
                         }
                     }
                     .frame(width: width/1.2, height: 270)
@@ -146,7 +179,7 @@ struct Home: View {
                         }
 //                        .padding(.horizontal, 30)
 //                        .padding(.trailing, -30)
-                        .padding(.leading, 30)
+                        .padding(.leading, 30.0)
                         .padding(.vertical, 30)
                         .disabled(!viewModel.isValid)
                         Button {
@@ -154,12 +187,12 @@ struct Home: View {
                         } label: {
                             Image(systemName: "barcode.viewfinder")
                                 .resizable()
-                                .frame(width: 30, height: 30)
+                                .frame(width: 44, height: 44)
                         }
                         .sheet(isPresented: $isPresentingScanner) {
                             CodeScannerView(codeTypes: [.ean13,
                                                         .ean8,
-                                                        .code128]) { response in
+                                                        .code128], showViewfinder: true) { response in
                                 if case let .success(result) = response {
                                     viewModel.searchBarcode = result.string
                                     viewModel.getbarcodeInfo()
@@ -169,28 +202,19 @@ struct Home: View {
                         }
                     }
                     .frame(width: width/1.2)
-                    Spacer(minLength: 150)
-//                    HStack(spacing: 16) {
-//                            Text("swxwsxwsxwsxsw")
-//                              .font(Font.system(.body, design: .monospaced))
-//                              .alignmentGuide(.customCenter) {
-//                                $0[HorizontalAlignment.center]
-//                              }
-//                            Button(role: .destructive) {
-//
-//                            } label: {
-//                              Image(systemName: "gobackward")
-//                                .imageScale(.large)
-//                            }
-//                            .buttonStyle(.borderedProminent)
-//                          }
+//                    .padding(.bottom , 5)
+                    if height<800{
+                        Spacer(minLength: 80)
+                    } else {
+                        Spacer(minLength: 100)
+                    }
                 }
                 .foregroundColor(.white)
                 .multilineTextAlignment(.center)
                 .padding()
             }
         }
-    }
+}
 }
 
 struct CustomCenter: AlignmentID {
@@ -200,4 +224,10 @@ struct CustomCenter: AlignmentID {
 }
 extension HorizontalAlignment {
   static let customCenter: HorizontalAlignment = .init(CustomCenter.self)
+}
+
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
+    }
 }

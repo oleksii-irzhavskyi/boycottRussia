@@ -10,12 +10,14 @@ import SwiftUI
 struct CompanyListScreen: View {
     @ObservedObject var fetcher = CompanyListViewModel()
     @State private var searchCompany = ""
+    let url = "https://api.airtable.com/v0/appSkeAxl6nGxM3Kd/Company%20Cards?api_key=keyKzAPkUIFqHdn7V"
     init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
 //        UITableView.appearance().separatorStyle = .none
         UITableView.appearance().backgroundColor = UIColor.clear
 //        UITableViewCell.appearance().backgroundColor = UIColor.clear
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .darkText
-        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
         
     }
     var body: some View {
@@ -90,7 +92,7 @@ struct CompanyListScreen: View {
                         Spacer()
 
                     }
-                    .padding(.bottom, 80)
+//                    .padding(.bottom, 80)
                     .listStyle(SidebarListStyle())
                     .navigationTitle("Список компаній")
                     .searchable(text: $searchCompany, placement:
@@ -109,8 +111,8 @@ struct CompanyListScreen: View {
                                 fetcher.search()
                             }
                 }
-                    .padding(.bottom , 80)
-                    .padding(.top, 5)
+//                    .padding(.bottom , 20)
+                    .padding(.top, 5) 
                 }
             }
 //            Spacer()
