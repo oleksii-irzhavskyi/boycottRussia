@@ -13,7 +13,7 @@
 		9B24BCF9283C09C30038B666 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCF8283C09C30038B666 /* FirebaseDatabase */; };
 		9B24BCFB283C09C30038B666 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCFA283C09C30038B666 /* FirebaseFirestore */; };
 		9B24BCFD283C09C30038B666 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9B24BCFC283C09C30038B666 /* FirebaseStorage */; };
-		9B3DB6AC284FD322009F248D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DB6AB284FD322009F248D /* MainView.swift */; };
+		9B4373D22889F4BC0077C21E /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 9B4373D12889F4BC0077C21E /* Siren */; };
 		9B48A0E52835870C001499B2 /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E42835870C001499B2 /* color.swift */; };
 		9B48A0E728358736001499B2 /* SearchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E628358736001499B2 /* SearchScreen.swift */; };
 		9B48A0E928358778001499B2 /* SearchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B48A0E828358778001499B2 /* SearchScreenViewModel.swift */; };
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		9B068B362853F3DD005444D7 /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
 		9B0EB0912863BFEF00CA876A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
-		9B3DB6AB284FD322009F248D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9B48A0E42835870C001499B2 /* color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
 		9B48A0E628358736001499B2 /* SearchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreen.swift; sourceTree = "<group>"; usesTabs = 0; };
 		9B48A0E828358778001499B2 /* SearchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewModel.swift; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4373D22889F4BC0077C21E /* Siren in Frameworks */,
 				9B24BCF9283C09C30038B666 /* FirebaseDatabase in Frameworks */,
 				9B24BCFB283C09C30038B666 /* FirebaseFirestore in Frameworks */,
 				9B24BCF7283C09C30038B666 /* FirebaseAnalytics in Frameworks */,
@@ -96,7 +96,6 @@
 				9BAB6D50287CD3D900BCDD2C /* HelpScreen */,
 				9B8CD862284BD60D00B79FFD /* CompanyListScreen */,
 				9BE28AB7283D433100CE22FB /* SearchScreen */,
-				9B3DB6AB284FD322009F248D /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +212,7 @@
 				9B24BCF8283C09C30038B666 /* FirebaseDatabase */,
 				9B24BCFA283C09C30038B666 /* FirebaseFirestore */,
 				9B24BCFC283C09C30038B666 /* FirebaseStorage */,
+				9B4373D12889F4BC0077C21E /* Siren */,
 			);
 			productName = boycottRussia;
 			productReference = 9BA1220E2822C65800F305A4 /* boycottRussia.app */;
@@ -245,6 +245,7 @@
 			packageReferences = (
 				9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 				9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9B4373D02889F4BC0077C21E /* XCRemoteSwiftPackageReference "Siren" */,
 			);
 			productRefGroup = 9BA1220F2822C65800F305A4 /* Products */;
 			projectDirPath = "";
@@ -311,7 +312,6 @@
 				9BE28AB4283D371100CE22FB /* FirebaseManager.swift in Sources */,
 				9B48A0E728358736001499B2 /* SearchScreen.swift in Sources */,
 				9B732FD4287CD4220059F901 /* SuggestionScreen.swift in Sources */,
-				9B3DB6AC284FD322009F248D /* MainView.swift in Sources */,
 				9BA122122822C65800F305A4 /* boycottRussiaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boycottrussia.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -486,7 +486,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boycottrussia.iosapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -527,6 +527,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		9B4373D02889F4BC0077C21E /* XCRemoteSwiftPackageReference "Siren" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArtSabintsev/Siren.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		9BA122232822CEE500F305A4 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/twostraws/CodeScanner";
@@ -557,6 +565,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9B24BCF5283C09C30038B666 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		9B4373D12889F4BC0077C21E /* Siren */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B4373D02889F4BC0077C21E /* XCRemoteSwiftPackageReference "Siren" */;
+			productName = Siren;
 		};
 		9BA122242822CEE500F305A4 /* CodeScanner */ = {
 			isa = XCSwiftPackageProductDependency;
