@@ -49,7 +49,7 @@ final class CompanyListViewModel: ObservableObject {
         }.resume()
     }
     func filterList(list: [Record], searchCompany: String) -> [Record] {
-        let filterList = list.filter {$0.fields.name.contains("\(searchCompany)")}
+        let filterList = list.filter {$0.fields.name.lowercased().contains("\(searchCompany.lowercased())")}
         return filterList
     }
     func search(searchCompany: String = "") {

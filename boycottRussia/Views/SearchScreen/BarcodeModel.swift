@@ -8,6 +8,6 @@
 import Foundation
 
 struct BarcodeModel {
-    let barcode: String
-    let name: String
+    let barcode: String?
+    let name: String?
 }

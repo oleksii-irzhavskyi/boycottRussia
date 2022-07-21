@@ -16,7 +16,7 @@ struct BoycottRussiaApp: App {
         }
     var body: some Scene {
         WindowGroup {
-            MainView()
+            CustomTabBar()
         }
     }
 }

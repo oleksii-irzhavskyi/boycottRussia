@@ -66,7 +66,7 @@ struct Full: Codable {
     let url: String
     let width, height: Int
 }
-struct Bookmark: Identifiable {
+struct Bookmark: Identifiable, Hashable {
     let id = UUID()
     let name: String
     let icon: String?

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    let width = UIScreen.main.bounds.width
     var body: some View {
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)){
         TabView {
             Home()
                 .tabItem {
@@ -23,6 +25,7 @@ struct MainView: View {
                         .foregroundColor(Color.black)
                 }
         }
+    }
     }
 }
 

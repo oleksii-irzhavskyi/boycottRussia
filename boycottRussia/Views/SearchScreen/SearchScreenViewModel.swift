@@ -12,10 +12,12 @@ final class SearchScreenViewModel: ObservableObject {
     // input
     @Published var searchCompany = ""
     @Published var searchBarcode = ""
+    @Published var company = ""
     // output
     @Published var isValid = false
     @Published var companyStatus: String = "Для отримання інформації введіть назву товару або компанії у спеціальному полі нижче або скористайтесь штрих-код сканером"
     @Published var companyCircle: String = "🇺🇦"
+    @Published var ratingHide: Bool = false
     private var cancellableSet: Set<AnyCancellable> = []
     
     init() {
@@ -29,11 +31,18 @@ final class SearchScreenViewModel: ObservableObject {
             .store(in: &cancellableSet)
     }
     func getbarcodeInfo() {
+        if searchBarcode.isNumeric{
         FirebaseManager.shared.getPost(collection: "companyBarcode", docName: searchBarcode, completion: {doc in
             guard doc != nil else {return}
             self.searchCompany = doc?.name ?? "Немає інформації"
             self.fetchAPI()
+            if self.searchCompany == "Немає інформації"{
+                self.searchCompany = ""
+            }
         })
+        }else{
+            self.companyStatus = "Отриманий штрих-код містить помилку."
+        }
     }
     func fetchAPI() {
         guard let search = self.searchCompany.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
@@ -53,13 +62,20 @@ final class SearchScreenViewModel: ObservableObject {
                         if decodeStatus.isEmpty {
                             self.companyStatus="Цієї компанії чи товару ще немає в нашій базі. Проте ми вже у пошуках"
                             self.companyCircle="🤔"
+                            self.ratingHide = false
                         } else {
                             self.companyStatus = self.getStatus(decodeStatus: decodeStatus)
+                            self.company = decodeStatus[0].name!
+                            self.ratingHide = true
                         }
                     }
                 }
             }
         }.resume()
+    }
+    
+    func addReaction(reaction: String) {
+        FirebaseManager.shared.updateRating(company: company, reaction: reaction)
     }
     
     func getStatus (decodeStatus: CompanyInfo) -> String {
@@ -101,4 +117,10 @@ final class SearchScreenViewModel: ObservableObject {
         }
         return ""
     }
+}
+
+extension String {
+   var isNumeric: Bool {
+     return !(self.isEmpty) && self.allSatisfy { $0.isNumber }
+   }
 }
