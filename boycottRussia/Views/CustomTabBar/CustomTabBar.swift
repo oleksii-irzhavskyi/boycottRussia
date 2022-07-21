@@ -111,6 +111,8 @@ struct CustomTabBar: View {
 //                                ,alignment: .bottom
 //                            )
             }
+        }.onTapGesture{
+            hideKeyboard()
         }
     }
 }
@@ -158,7 +160,8 @@ struct TabBarButton: View{
     }
 }
 
-
-// Custom Tab lighting indicator
-//shape
-
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}

@@ -11,10 +11,10 @@ import FirebaseDatabase
 final class RatingListViewModel: ObservableObject {
     @Published var ratings: [Rating] = []
     
-    private lazy var databasePath: DatabaseReference? = {
-        let ref = Database.database(url: "https://boycott-russia-rating.europe-west1.firebasedatabase.app").reference().child("rating")
-        return ref
-    }()
+//    private lazy var databasePath: DatabaseReference? = {
+//        let ref = Database.database(url: "https://boycott-russia-rating.europe-west1.firebasedatabase.app").reference().child("rating")
+//        return ref
+//    }()
     
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
@@ -24,9 +24,8 @@ final class RatingListViewModel: ObservableObject {
     }
     func listenRealtimeDatabase() {
         var storage: [Rating] = []
-        guard let databasePath = databasePath else {
-            return
-        }
+        let ref = Database.database(url: "https://boycott-russia-rating.europe-west1.firebasedatabase.app").reference().child("rating")
+        let databasePath = ref
         databasePath
             .observe(.childAdded) { [weak self] snapshot in
                 guard
@@ -51,7 +50,7 @@ final class RatingListViewModel: ObservableObject {
         
     }
     
-    func stopListening(){
-        databasePath?.removeAllObservers()
-    }
+//    func stopListening(){
+//        databasePath?.removeAllObservers()
+//    }
 }
